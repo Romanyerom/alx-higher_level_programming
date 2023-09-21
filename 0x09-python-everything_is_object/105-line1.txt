@@ -1,1 +1,2 @@
-there are 3 int objects created and still in memory at this point. These integers fall within the small integer caching range, and they are reused throughout the code. No additional integer objectsare created for the code you provided, as all the integer literals used in your code are within this cached range.
+3 int objects created and still in memory. 
+These integers fall within the small integer caching range, and they are reused throughout the code. No additional integer objectsare created for the code you provided, as all the integer literals used in your code are within this cached range.
