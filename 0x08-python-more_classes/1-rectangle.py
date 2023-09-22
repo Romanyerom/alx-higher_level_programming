@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-
+"""
+This script demonstrates the usage of the Rectangle class.
+It creates a Rectangle instance, performs various operations, and handles exceptions.
+"""
 class Rectangle:
     def __init__(self, width=0, height=0):
         self.__width = width
