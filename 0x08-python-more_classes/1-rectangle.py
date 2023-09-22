@@ -2,8 +2,10 @@
 
 """
 This script demonstrates the usage of the Rectangle class.
-It creates a Rectangle instance, performs various operations, and handles exceptions.
+It creates a Rectangle instance,
+performs various operations, and handles exceptions.
 """
+
 
 class Rectangle:
     """

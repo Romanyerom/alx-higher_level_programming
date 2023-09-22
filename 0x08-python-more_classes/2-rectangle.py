@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 
 """
-This script defines a Rectangle class that represents rectangles and provides methods to calculate
-area and perimeter. It also includes error handling for invalid dimensions.
+This script defines a Rectangle class that represents rectangles
+and provides methods to calculate area and perimeter.
+It also includes error handling for invalid dimensions.
 """
+
 
 class Rectangle:
     """
