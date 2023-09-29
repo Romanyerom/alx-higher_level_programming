@@ -1,6 +1,20 @@
 #!/usr/bin/python3
 
+"""
+This script demonstrates the usage of the Rectangle class.
+It creates a Rectangle instance,
+performs various operations, and handles exceptions.
+"""
+
+
 class Rectangle:
+    """
+    This is the Rectangle class.
+
+    Attributes:
+        width (int): The width of the rectangle.
+        height (int): The height of the rectangle.
+    """
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
