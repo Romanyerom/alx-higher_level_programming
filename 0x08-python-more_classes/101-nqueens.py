@@ -2,7 +2,7 @@
 import sys
 
 
-def is_safe(board, row, col):
+def is_safe(board, row, col, n):
     # Check if it's safe to place a queen at board[row][col]
 
     # Check column on the left side
@@ -16,7 +16,7 @@ def is_safe(board, row, col):
             return False
 
     # Check lower diagonal on the left side
-    for i, j in zip(range(row, len(board), 1), range(col, -1, -1)):
+    for i, j in zip(range(row, n, 1), range(col, -1, -1)):
         if board[i][j] == 1:
             return False
 
@@ -36,14 +36,13 @@ def solve_nqueens(n):
             return
 
         for i in range(n):
-            if is_safe(board, i, col):
+            if is_safe(board, i, col, n):
                 board[i][col] = 1
                 solve(col + 1)
                 board[i][col] = 0
 
     solve(0)
     return solutions
-
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -55,10 +54,12 @@ if __name__ == "__main__":
         if n < 4:
             print("N must be at least 4")
             sys.exit(1)
-
-            solutions = solve_nqueens(n)
-            for solution in solutions:
-                print(solution)
+        
+        solutions = solve_nqueens(n)
+        for solution in solutions:
+            for row, col in solution:
+                print(f"[{row}, {col}]", end=' ')
+            print()
     except ValueError:
         print("N must be a number")
         sys.exit(1)
