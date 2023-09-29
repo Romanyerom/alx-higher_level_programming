@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 import sys
 
 def is_safe(board, row, col):
@@ -24,15 +23,14 @@ def is_safe(board, row, col):
 
 def solve_nqueens(n):
     if n < 4:
-        print("N must be at least 4")
-        sys.exit(1)
+        return []
 
     board = [[0 for _ in range(n)] for _ in range(n)]
     solutions = []
 
     def solve(col):
         if col == n:
-            solutions.append([row[:] for row in board])
+            solutions.append([(i, j) for i in range(n) for j in range(n) if board[i][j] == 1])
             return
 
         for i in range(n):
@@ -42,9 +40,7 @@ def solve_nqueens(n):
                 board[i][col] = 0
 
     solve(0)
-
-    for solution in solutions:
-        print(solution)
+    return solutions
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
@@ -53,7 +49,13 @@ if __name__ == "__main__":
 
     try:
         n = int(sys.argv[1])
-        solve_nqueens(n)
+        if n < 4:
+            print("N must be at least 4")
+            sys.exit(1)
+        
+        solutions = solve_nqueens(n)
+        for solution in solutions:
+            print(solution)
     except ValueError:
         print("N must be a number")
         sys.exit(1)
