@@ -32,10 +32,7 @@ def solve_nqueens(n):
 
     def solve(col):
         if col == n:
-            solutions.append([(i, j)
-                for i in range(n)
-                for j in range(n)
-                if board[i][j] == 1])
+            solutions.append([(i, j) for i in range(n) for j in range(n) if board[i][j] == 1])
             return
 
         for i in range(n):
