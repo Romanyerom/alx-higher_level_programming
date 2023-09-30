@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+
+"""
+Tests for MyList class
+"""
+
+from models import MyList
+
+# Create an instance of MyList
+my_list = MyList()
+
+# Append integers to the list
+my_list.append(1)
+my_list.append(4)
+my_list.append(2)
+my_list.append(3)
+my_list.append(5)
+
+# Print the list (unsorted)
+print(my_list)
+# Expected output: [1, 4, 2, 3, 5]
+
+# Call the print_sorted method to print the list in ascending order
+my_list.print_sorted()
+# Expected output: [1, 2, 3, 4, 5]
