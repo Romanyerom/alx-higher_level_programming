@@ -1,6 +1,6 @@
 #!/bin/bash
-
 # Check if URL and filename are provided
+
 if [ -z "$1" ] || [ -z "$2" ]; then
   echo "Usage: $0 <URL> <JSON_FILE>"
   exit 1
